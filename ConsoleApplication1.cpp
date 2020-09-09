@@ -1,9 +1,15 @@
-﻿//#pragma comment(lib,"curllib.lib")
+﻿#define CURL_STATICLIB
 #include <iostream>
 #include <conio.h>
 #include <locale.h>
 #include <stdlib.h>
-
+#include "curl/curl.h"
+#ifdef _DEBUG
+#pragma comment (lib, "curl/libcurl_a_debug.lib")
+#else
+#pragma comment (lib, "curl/libcurl_a.lib")
+#endif
+ 
 using namespace std;
 
 int main()
